@@ -20,6 +20,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var Hamburguesa: UILabel!
 
+    @IBOutlet weak var País: UILabel!
+    
+    let colores = Colores()
+    let hamburguesas = ColeccionDeHamburguesa()
+    let paises = ColeccionDePaises()
+    
+    @IBAction func quieroUnaHamburguesa() {
+        let colorAleatorio = colores.regresaColorAleatorio()
+        view.backgroundColor = colorAleatorio
+        view.tintColor = colorAleatorio
+        let hamburguesa = hamburguesas.obtenHamburguesa()
+        Hamburguesa.text = hamburguesa
+        let pais = paises.obtenPais()
+        País.text = pais
+    }
 }
 
